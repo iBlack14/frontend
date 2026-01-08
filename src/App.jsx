@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Search, Download, Play, Pause, RefreshCw, Trash2 } from 'lucide-react';
 
-const API_URL = ((window.APP_CONFIG && window.APP_CONFIG.VITE_API_URL) || import.meta.env.VITE_API_URL || 'http://localhost:8000').replace(/\/$/, '');
-const WS_URL = ((window.APP_CONFIG && window.APP_CONFIG.VITE_WS_URL) || import.meta.env.VITE_WS_URL || 'ws://localhost:8000/ws').replace(/\/$/, '');
+const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:8000').replace(/\/$/, '');
+const WS_URL = (import.meta.env.VITE_WS_URL || 'ws://localhost:8000/ws').replace(/\/$/, '');
 
 export default function GoogleMapsScraper() {
     const [rubro, setRubro] = useState('minería');
