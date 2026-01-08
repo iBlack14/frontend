@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Search, Download, Play, Pause, RefreshCw, Trash2 } from 'lucide-react';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
-const WS_URL = import.meta.env.VITE_WS_URL || 'ws://localhost:8000/ws';
+const API_URL = (window.APP_CONFIG && window.APP_CONFIG.VITE_API_URL) || import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const WS_URL = (window.APP_CONFIG && window.APP_CONFIG.VITE_WS_URL) || import.meta.env.VITE_WS_URL || 'ws://localhost:8000/ws';
 
 export default function GoogleMapsScraper() {
     const [rubro, setRubro] = useState('minería');
@@ -464,8 +464,8 @@ export default function GoogleMapsScraper() {
                                             <td className="px-4 py-3 text-sm">
                                                 {result.estado && (
                                                     <span className={`inline-flex px-2 py-1 rounded-full text-xs font-semibold ${result.estado.toLowerCase().includes('abierto')
-                                                            ? 'bg-green-100 text-green-800'
-                                                            : 'bg-red-100 text-red-800'
+                                                        ? 'bg-green-100 text-green-800'
+                                                        : 'bg-red-100 text-red-800'
                                                         }`}>
                                                         {result.estado}
                                                     </span>
